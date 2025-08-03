@@ -2,6 +2,29 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight, Users, Target, Zap } from "lucide-react"
 import Link from "next/link"
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'About UBX Agency | Modern Advertising Powerhouse Engineering Attention',
+  description: 'Learn about UBX Agency, a modern advertising powerhouse with 200+ premium websites in our network. We engineer attention for brands through innovative advertising solutions and trusted partnerships.',
+  keywords: [
+    'about UBX Agency',
+    'advertising powerhouse',
+    'media network company',
+    'brand attention engineering',
+    'advertising agency history',
+    'digital marketing experts',
+    'premium website network'
+  ],
+  openGraph: {
+    title: 'About UBX Agency | Modern Advertising Powerhouse',
+    description: 'Modern advertising powerhouse with 200+ premium websites in our network. Engineering attention for brands through innovative solutions.',
+    images: ['/og-about.jpg'],
+  },
+  alternates: {
+    canonical: 'https://ubxagency.com/about',
+  },
+}
 
 export default function AboutPage() {
   return (

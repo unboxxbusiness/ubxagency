@@ -2,25 +2,119 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight, Target, Zap, TrendingUp, Users, Globe, BarChart3, Rocket } from "lucide-react"
 import Link from "next/link"
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'UBX Agency - Modern Advertising Powerhouse | Engineering Attention for Brands',
+  description: 'UBX Agency is a modern advertising powerhouse helping brands scale through our own media network and trusted partners. We don\'t just run ads — we engineer attention, delivering reach, relevance, and real results.',
+  openGraph: {
+    title: 'UBX Agency - Modern Advertising Powerhouse',
+    description: 'Engineering attention for brands through our proprietary media network of 200+ premium websites. We deliver reach, relevance, and real results.',
+    images: ['/og-home.jpg'],
+  },
+  alternates: {
+    canonical: 'https://ubxagency.com',
+  },
+}
 
 export default function UBXAgencyLanding() {
   return (
+    <>
+      {/* Structured Data for WebSite */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "UBX Agency",
+            "alternateName": "UBX",
+            "url": "https://ubxagency.com",
+            "description": "Modern advertising powerhouse engineering attention for brands",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://ubxagency.com/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "UBX Agency"
+            }
+          })
+        }}
+      />
+      
+      {/* Structured Data for Service */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "UBX Agency",
+            "description": "Modern advertising powerhouse helping brands scale through our own media network and trusted partners",
+            "url": "https://ubxagency.com",
+            "telephone": "+1-XXX-XXX-XXXX",
+            "priceRange": "$$$$",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "US"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 40.7128,
+              "longitude": -74.0060
+            },
+            "serviceType": "Digital Advertising Agency",
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "UBX Agency Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Media Network Advertising",
+                    "description": "Access to our proprietary network of 200+ premium websites"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Creative Strategy",
+                    "description": "Data-driven creative strategies that capture attention"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Performance Analytics",
+                    "description": "Real-time analytics and optimization for measurable results"
+                  }
+                }
+              ]
+            }
+          })
+        }}
+      />
     <div className="flex flex-col min-h-screen bg-black text-white">
       {/* Header */}
-      <header className="px-4 lg:px-6 h-16 flex items-center border-b border-gray-800">
-        <Link href="/" className="flex items-center justify-center">
-          <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-            UBX
-          </div>
+      <header className="px-4 lg:px-6 h-16 flex items-center border-b border-gray-800" role="banner">
+        <Link href="/" className="flex items-center justify-center" aria-label="UBX Agency Home">
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            UBX Agency
+          </h1>
         </Link>
-        <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link href="/services" className="text-sm font-medium hover:text-purple-400 transition-colors">
+        <nav className="ml-auto flex gap-4 sm:gap-6" role="navigation" aria-label="Main navigation">
+          <Link href="/services" className="text-sm font-medium hover:text-purple-400 transition-colors" aria-label="Our Services">
             Services
           </Link>
-          <Link href="/about" className="text-sm font-medium hover:text-purple-400 transition-colors">
+          <Link href="/about" className="text-sm font-medium hover:text-purple-400 transition-colors" aria-label="About UBX Agency">
             About
           </Link>
-          <Link href="/contact" className="text-sm font-medium hover:text-purple-400 transition-colors">
+          <Link href="/contact" className="text-sm font-medium hover:text-purple-400 transition-colors" aria-label="Contact Us">
             Contact
           </Link>
         </nav>
@@ -34,17 +128,17 @@ export default function UBXAgencyLanding() {
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-purple-500/10 px-3 py-1 text-sm text-purple-400 border border-purple-500/20">
-                  UBX Agency
+                  Modern Advertising Powerhouse
                 </div>
-                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none">
-                  Built to{" "}
+                <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none">
+                  Engineering Attention for{" "}
                   <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                    Disrupt
+                    Modern Brands
                   </span>
-                </h1>
+                </h2>
                 <p className="mx-auto max-w-[700px] text-gray-300 md:text-xl lg:text-2xl">
-                  A modern advertising powerhouse helping brands scale through our own media network and trusted
-                  partners. We don't just run ads — we engineer attention.
+                  UBX Agency is a modern advertising powerhouse helping brands scale through our own media network and trusted
+                  partners. We don't just run ads — we engineer attention, delivering reach, relevance, and real results.
                 </p>
               </div>
               <div className="space-x-4">
@@ -53,9 +147,9 @@ export default function UBXAgencyLanding() {
                   className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600"
                   asChild
                 >
-                  <Link href="/contact">
-                    Start Disrupting
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                  <Link href="/contact" aria-label="Contact UBX Agency to start your advertising campaign">
+                    Start Your Campaign
+                    <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                   </Link>
                 </Button>
                 <Button
@@ -64,7 +158,7 @@ export default function UBXAgencyLanding() {
                   className="border-gray-600 text-white hover:bg-gray-800 bg-transparent"
                   asChild
                 >
-                  <Link href="/services">Our Services</Link>
+                  <Link href="/services" aria-label="View UBX Agency advertising services">Our Services</Link>
                 </Button>
               </div>
             </div>
@@ -334,5 +428,6 @@ export default function UBXAgencyLanding() {
         </nav>
       </footer>
     </div>
+    </>
   )
 }

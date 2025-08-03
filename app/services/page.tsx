@@ -2,6 +2,30 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowRight, Target, Zap, TrendingUp, Globe, Megaphone, Code, Brain } from "lucide-react"
 import Link from "next/link"
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Digital Advertising Services | UBX Agency - Media Network & Creative Strategy',
+  description: 'Explore UBX Agency\'s comprehensive digital advertising services including media network access, creative strategy, performance analytics, and brand scaling solutions. 200+ premium websites in our network.',
+  keywords: [
+    'digital advertising services',
+    'media network advertising',
+    'creative strategy',
+    'performance analytics',
+    'brand scaling',
+    'advertising solutions',
+    'premium website network',
+    'digital marketing services'
+  ],
+  openGraph: {
+    title: 'Digital Advertising Services | UBX Agency',
+    description: 'Comprehensive advertising services through our proprietary media network of 200+ premium websites. Creative strategy, performance analytics, and brand scaling solutions.',
+    images: ['/og-services.jpg'],
+  },
+  alternates: {
+    canonical: 'https://ubxagency.com/services',
+  },
+}
 
 export default function ServicesPage() {
   return (
